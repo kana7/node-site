@@ -6,7 +6,7 @@ var router = express.Router();
 
 //route our
 router.get('/', function(req, res){
-  res.render("pages/index");
+  res.render("pages/home");
 });
 
 router.get('/about', function(req, res){
@@ -25,7 +25,8 @@ router.get('/contact', function(req, res){
 });
 
 router.post("/contact", function(req, res){
-
+  console.log(req.body.message);
+  res.send("thanks for contacting us, "+req.body.name+"! We will respond shortly!");
 });
 
 // export our router
